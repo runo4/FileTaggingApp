@@ -19,31 +19,31 @@ button{
     -webkit-app-region: no-drag;
 }
 
-.button-minimize{
+#button-minimize{
     flex: 1;
 }
 
-.button-maximize{
+#button-maximize{
     flex: 1;
 }
 
-.button-close{
+#button-close{
     flex: 1;
 }
 
-.button-minimize:hover{
+#button-minimize:hover{
     background-color: #41414b;
 }
 
-.button-maximize:hover{
+#button-maximize:hover{
     background-color: #41414b;
 }
 
-.button-close:hover{
+#button-close:hover{
     background-color: #dd4242;
 }
 
-.button-close:hover button img{
+#button-close:hover button img{
     background-image: url("resource/img/close2.png");
     background-repeat: no-repeat;
 }
