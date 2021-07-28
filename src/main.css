@@ -7,12 +7,13 @@ html,
 body {
     width: 100%;
     height: 100%;
-    background-color: #4c515c; /*main-color*/
+    background-color: #33333b; /*main-color*/
     overflow: hidden;
 }
 
 /** header -> 34px、footer -> 20px */
 
+/*****************************************************/
 .main-area {
     padding: 34px 0px 20px 0px;
     height: 100%;
@@ -26,32 +27,55 @@ body {
 }
 
 /* main-container elements*/
-.left-container{
-    width: 10%;
+.left-main-container{
+    width: 240px;
 }
 
-.mid-container{
+.mid-main-container{
     flex: 1;
-    background-color: #3d444d;
+    overflow-y: scroll;
+    background-color: #26262e;
 }
 
-.right-container{
-    width: 15%;
+.right-main-container{
+    width: 360px;
 }
 /**/
 
+/*****************************************************/
 .header-area {
     position: fixed;
+    -webkit-app-region: drag; /* draggable */
     height: 34px;
     width: 100%;
 }
 
+.header-container{
+    display: flex;
+    height: 100%;
+}
+
+.button-tools{
+    min-width: 300px;
+    width: 30%;
+}
+
+.title-bar{
+    flex: 1;
+}
+
+.button-control{
+    display: flex;
+    width: 160px;
+}
+
+/*****************************************************/
 .footer-area {
     position: fixed;
     height: 20px;
     width: 100%;
     bottom: 0px;
-    background-color: #636875;
+    background-color: #41414b;
     color: #b2b9c4;
     font-size: 80%;
 }
