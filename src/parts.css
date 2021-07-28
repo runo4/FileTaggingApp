@@ -1,0 +1,87 @@
+/* ボタン装飾 */
+button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 100%;
+    width: 100%;
+
+    -webkit-app-region: no-drag;
+}
+
+.button-minimize{
+    flex: 1;
+}
+
+.button-maximize{
+    flex: 1;
+}
+
+.button-close{
+    flex: 1;
+}
+
+.button-minimize:hover{
+    background-color: #41414b;
+}
+
+.button-maximize:hover{
+    background-color: #41414b;
+}
+
+.button-close:hover{
+    background-color: #dd4242;
+}
+
+.button-close:hover button img{
+    background-image: url("resource/img/close2.png");
+    background-repeat: no-repeat;
+}
+
+/* スクロールバー装飾 */
+.mid-main-container::-webkit-scrollbar{
+    overflow:hidden;
+    width:5px;
+    background:#26262e;
+    
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+
+.mid-main-container::-webkit-scrollbar-button{
+    display:none;
+}
+
+.mid-main-container::-webkit-scrollbar-piece{
+    background:#60606b;
+}
+
+.mid-main-container::-webkit-scrollbar-piece:start{
+    background:#60606b;
+}
+
+.mid-main-container::-webkit-scrollbar-thumb{
+    overflow:hidden;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    
+    background:#60606b;
+}
+
+.mid-main-container::-webkit-scrollbar-corner{
+    overflow:hidden;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    
+    background:#60606b;
+}
