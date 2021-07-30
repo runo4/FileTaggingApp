@@ -10,7 +10,9 @@ function createWindow() {
         height: 900, 
         frame: false,
         webPreferences: {
-            nodeIntegration: true,
+            nodeIntegration: false,
+            contextIsolation: true,
+            enableRemoteModule: true,
             preload: path.join(__dirname, 'preload.js')
         }
     });
@@ -31,6 +33,26 @@ function createWindow() {
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
+
+    //////////独自の機能//////////
+
+    //最小化機能
+    ipcMain.handle('window-minimize', () => {
+        mainWindow.minimize();
+    });
+
+    //最大化機能
+    let fullScreen = false;
+    ipcMain.handle('window-maximize', () => {
+        mainWindow.setFullScreen((fullScreen = !fullScreen));
+    });
+
+    //閉じる機能
+    ipcMain.handle('window-close', () => {
+        app.quit();
+    })
+
+    /////////独自の機能　ここまで///////////
 }
 
 app.on('ready', createWindow);

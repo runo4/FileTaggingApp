@@ -1,7 +1,15 @@
-const {ipcRenderer} = require('electron');
+const { contextBridge, ipcRenderer} = require('electron');
 
-process.once('loaded', () => {
-    global.native = {
-        ipcRenderer: ipcRenderer
-    };
-});
+contextBridge.exposeInMainWorld(
+    "myapi", {
+        minimize: () => {
+            ipcRenderer.invoke('window-minimize');
+        },
+        maximize: () => {
+            ipcRenderer.invoke('window-maximize');
+        },
+        close: () => {
+            ipcRenderer.invoke('window-close');
+        }
+    }
+);

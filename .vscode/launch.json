@@ -9,7 +9,11 @@
             "request": "launch",
             "name": "Electron Main",
             "program": "${workspaceFolder}/src/main.js",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron"
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+            "runtimeArgs": [
+                "--enable-logging"
+            ],
+            "console":"integratedTerminal"
         }
     ]
 }
