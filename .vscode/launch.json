@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome",
+            "type": "node",
             "request": "launch",
-            "type": "pwa-chrome",
-            "file": "${workspaceFolder}/src/index.html",
-            "runtimeArgs": ["--disable-web-security"]
+            "name": "Electron Main",
+            "program": "${workspaceFolder}/src/main.js",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron"
         }
     ]
 }

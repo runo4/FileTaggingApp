@@ -1,4 +1,4 @@
-const { app, Menu, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -9,22 +9,22 @@ function createWindow() {
         width: 1200, 
         height: 900, 
         frame: false,
-        preload: './preload.js',
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js')
         }
     });
 
     mainWindow.setMinimumSize(1080, 810);
 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, '/html/index.html'),
         protocol: 'file:',
         slashes: true
     }));
 
     // developer tool activated
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 
     Menu.setApplicationMenu(null);
 
